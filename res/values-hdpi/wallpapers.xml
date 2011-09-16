@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <!--
+  *
+  * Sensational Wallpapers
+  *
+  -->
+  
+  <!--left 2 wallpapers in to show the basic formatting-->
+ 
+<resources>
+    <string-array name="wallpapers" translatable="false">
+		<item>skull1</item>
+		<item>skull1a</item>
+    </string-array>
+</resources>
