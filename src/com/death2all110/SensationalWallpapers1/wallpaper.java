@@ -71,12 +71,7 @@ public class wallpaper extends Activity implements AdapterView.OnItemSelectedLis
     private ArrayList<Integer> mThumbs;
     private ArrayList<Integer> mImages;
     private WallpaperLoader mLoader;
-    
-    //public void onCreate1(Bundle savedInstanceState) {
-    	//super.onCreate(savedInstanceState);
-     // Set a Click Listener for "About"
 
-    //}
 
     
     
@@ -113,17 +108,31 @@ public class wallpaper extends Activity implements AdapterView.OnItemSelectedLis
 					alertbox.setTitle("About This App");
 					
 					// Set message to display...
-					alertbox.setMessage("This is a simple 'about' page." + "\n" + "\n" + "Will list emails for paypal donations soon...");
-					// TODO add emails for paypal donations to above ^...
+					alertbox.setMessage("This is a simple 'about' page." + "\n" + "\n" + "lorem ipsum" + "\n" "lorem ipsum");
+
 
 					
 					// Add a neutral button to the alert box AND assign a listener for said button...
-					alertbox.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
+					alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener(){
 						
 						// click listener for box
 						public void onClick(DialogInterface arg0, int arg1){
 							// Button was clicked!!
 							Toast.makeText(getApplicationContext(), "Dialog closed successfully!", Toast.LENGTH_LONG).show();
+						}
+					});
+					
+					//Positive button that goes to link...
+					alertbox.setPositiveButton("Positive!", new DialogInterface.OnClickListener(){
+						//listener with link info even a toast
+						public void onClick(DialogInterface arg2, int arg3){
+							//Button Pressed
+							Intent linkMe = new Intent ();
+							linkMe.setAction(Intent.ACTION_VIEW);
+							linkMe.addCategory(Intent.CATEGORY_BROWSABLE);
+							linkMe.setData(Uri.parse("http://yourlinkhere.net"));
+							startActivity(linkMe);
+							Toast.makeText(getApplicationContext(), "Launching Link!", Toast.LENGTH_LONG).show();
 						}
 					});
 					// show it!!!
